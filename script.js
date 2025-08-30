@@ -42,8 +42,8 @@ populateSelect("selectPriv", valuesPriv);
 function findResult() {
   const e = document.getElementById("selectE").value;
   const f = document.getElementById("selectF").value;
-  const p = document.getElementById("selectPriv").value;
-  const key = `${e}|${f}|${p}`;
+//  const p = document.getElementById("selectPriv").value;
+  const key = `${e}|${f}/`;
   const i = combinations[key];
 
   const result = i !== undefined && kostentraeger[i] !== undefined && tarif[i] !== undefined
@@ -57,5 +57,6 @@ function findResult() {
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js');
 }
+
 
 
