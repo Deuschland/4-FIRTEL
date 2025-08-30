@@ -12,7 +12,7 @@ const tarif = [
 
 const valuesE = ["E1", "E2", "E3", "E4", "E5", "E6", "E7", "E8", "E9", "E10"];
 const valuesF = ["F1", "F2", "F3"];
-const valuesPriv = ["P1", "P2", "P3"];
+//const valuesPriv = ["P1", "P2", "P3"];
 
 // Комбінації: E|F|Priv → індекс
 const combinations = {};
@@ -57,3 +57,4 @@ function findResult() {
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js');
 }
+
