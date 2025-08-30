@@ -12,16 +12,13 @@ const tarif = [
 
 const valuesE = ["E1", "E2", "E3", "E4", "E5", "E6", "E7", "E8", "E9", "E10"];
 const valuesF = ["F1", "F2", "F3"];
-//const valuesPriv = ["P1", "P2", "P3"];
 
-// Комбінації: E|F|Priv → індекс
+// Комбінації: E|F → індекс
 const combinations = {};
 let index = 0;
 valuesE.forEach(e => {
   valuesF.forEach(f => {
- //   valuesPriv.forEach(p => {
-      combinations[`${e}|${f}`] = index++;
-   // });
+    combinations[`${e}|${f}`] = index++;
   });
 });
 
@@ -37,13 +34,11 @@ function populateSelect(id, values) {
 
 populateSelect("selectE", valuesE);
 populateSelect("selectF", valuesF);
-populateSelect("selectPriv", valuesPriv);
 
 function findResult() {
   const e = document.getElementById("selectE").value;
   const f = document.getElementById("selectF").value;
-//  const p = document.getElementById("selectPriv").value;
-  const key = `${e}|${f}/`;
+  const key = `${e}|${f}`;
   const i = combinations[key];
 
   const result = i !== undefined && kostentraeger[i] !== undefined && tarif[i] !== undefined
@@ -57,6 +52,3 @@ function findResult() {
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js');
 }
-
-
-
