@@ -19,9 +19,9 @@ const combinations = {};
 let index = 0;
 valuesE.forEach(e => {
   valuesF.forEach(f => {
-    valuesPriv.forEach(p => {
-      combinations[`${e}|${f}|${p}`] = index++;
-    });
+ //   valuesPriv.forEach(p => {
+      combinations[`${e}|${f}`] = index++;
+   // });
   });
 });
 
@@ -57,4 +57,5 @@ function findResult() {
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js');
 }
+
 
